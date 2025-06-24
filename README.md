@@ -16,7 +16,7 @@ Before running the project, ensure you have the following installed on your syst
    Clone the project repository to your local machine:
 
    ```bash
-   git clone https://github.com/a3mad/segmentation-ml.git
+   git clone https://github.com/a3mad/segmentation-ml.git](https://github.com/AntoniousShehata/CustomerSegmentation.git
    ```
    
 2. **Create and Activate a Virtual Environment**  
@@ -59,22 +59,12 @@ Before running the project, ensure you have the following installed on your syst
    flask run
    ```
 
-
-6. **Interact with the Application**  
-   - Open your browser and navigate to [http://127.0.0.1:5000](http://127.0.0.1:5000).  
-   - Follow these steps in the application:
-     - Select a segmentation type.
-     - Upload your dataset.
-     - Match required and additional columns.
-     - Review the selected columns.
-     - Run the segmentation process and view results.
-
-7. **Optional: Debug Mode**  
+6. **Optional: Debug Mode**  
    To limit dataset rows during debugging:
    - Open `config.py`.
    - Set `DEBUG_MODE = True`.
 
-8. **Deactivate the Virtual Environment**  
+7. **Deactivate the Virtual Environment**  
    When you're done, deactivate the virtual environment: 
    ```bash
    deactivate
