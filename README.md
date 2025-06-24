@@ -16,7 +16,7 @@ Before running the project, ensure you have the following installed on your syst
    Clone the project repository to your local machine:
 
    ```bash
-   git clone https://github.com/a3mad/segmentation-ml.git](https://github.com/AntoniousShehata/CustomerSegmentation.git
+   git clone (https://github.com/AntoniousShehata/CustomerSegmentation.git)
    ```
    
 2. **Create and Activate a Virtual Environment**  
