@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Upload Dataset{% endblock %}
+{% block content %}
+<h1 class="text-center">Step 2: Upload Your Dataset</h1>
+<form method="POST" enctype="multipart/form-data" class="mx-auto" style="max-width: 400px;">
+    <div class="form-group mb-3">
+        <label for="data_file" class="form-label">Select CSV File:</label>
+        <input type="file" name="data_file" id="data_file" class="form-control" accept=".csv" required>
+    </div>
+    <h4>Required Columns:</h4>
+    <ul class="list-group mb-3">
+        {% for col, meta in required_columns_info.items() %}
+        <li class="list-group-item">
+            <strong>{{ col }}</strong> ({{ meta.type }}, Example: {{ meta.example }})
+        </li>
+        {% endfor %}
+    </ul>
+    <button type="submit" class="btn btn-primary w-100">Next</button>
+</form>
+{% endblock %}

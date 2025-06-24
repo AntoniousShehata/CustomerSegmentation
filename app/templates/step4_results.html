@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Segmentation Results{% endblock %}
+{% block content %}
+<h1 class="text-center">Segmentation Results</h1>
+<p><strong>Segmentation Type:</strong> {{ chosen_type }}</p>
+<p><strong>Number of Clusters:</strong> {{ cluster_info.n_clusters }}</p>
+<p><strong>Silhouette Score:</strong> {{ cluster_info.silhouette_score }}</p>
+
+<h2>Cluster Descriptions</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Cluster ID</th>
+            <th>Cluster Label</th>
+            <th>Number of Customers</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cluster in cluster_info.clusters %}
+        <tr>
+            <td>{{ cluster.id }}</td>
+            <td>{{ cluster.label }}</td>
+            <td>{{ cluster.num_customers }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Graphs</h2>
+<div class="row">
+    {% for graph in graph_files %}
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='images/' + graph) }}" class="img-fluid" alt="{{ graph }}">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

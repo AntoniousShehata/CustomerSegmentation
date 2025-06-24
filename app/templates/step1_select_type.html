@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Select Segmentation Type{% endblock %}
+{% block content %}
+<h1 class="text-center">Step 1: Select Segmentation Type</h1>
+<form method="POST" class="mx-auto" style="max-width: 400px;">
+    <div class="form-group mb-3">
+        <label for="segmentation_type" class="form-label">Choose Segmentation Type:</label>
+        <select name="segmentation_type" id="segmentation_type" class="form-select">
+            {% for type in segmentation_types %}
+            <option value="{{ type }}">{{ type }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Next</button>
+</form>
+{% endblock %}

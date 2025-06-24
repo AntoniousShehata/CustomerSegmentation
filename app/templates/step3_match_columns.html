@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Match Dataset Columns{% endblock %}
+{% block content %}
+<h1 class="text-center">Step 3: Match Columns</h1>
+<form method="POST" class="mx-auto" style="max-width: 600px;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Required Column</th>
+                <th>Dataset Column</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for req_col in required_cols %}
+            <tr>
+                <td>{{ req_col }}</td>
+                <td>
+                    <select name="{{ req_col }}" class="form-select">
+                        <option value="None">None</option>
+                        {% for dataset_col in dataset_columns %}
+                        <option value="{{ dataset_col }}" {% if dataset_col == matched[req_col] %}selected{% endif %}>
+                            {{ dataset_col }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="form-group">
+        <label for="additional_columns" class="form-label">Add Additional Columns:</label>
+        <select name="additional_columns" id="additional_columns" class="form-select" multiple>
+            {% for dataset_col in dataset_columns %}
+            <option value="{{ dataset_col }}">{{ dataset_col }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Next</button>
+</form>
+{% endblock %}
